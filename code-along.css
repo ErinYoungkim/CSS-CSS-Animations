@@ -7,6 +7,7 @@
   width: 20%;
   margin: auto;
   display: inline-block;
+  transform: translateX(125px);
 }
 
 /****************************************
@@ -18,11 +19,12 @@
   width: 200px;
   height: 200px;
   filter: grayscale(100%);
-
+  transition: 10s;
 }
 
 .transition-demo img:hover {
-
+  filter: none;
+  transform: scale(3) rotate(360deg);
 }
 
 /****************************************
@@ -35,7 +37,7 @@
   width: 500px;
   margin: auto;
   background-color: palegreen;
-
+  animation: sale-bar 10s infinite;
 }
 
 @keyframes sale-bar {
@@ -43,3 +45,39 @@
   75% { background-color: #FF033E; width: 125x }
   100% { background-color: crimson; width: 10px }
 }
+
+section {
+  height: 400px;
+  width: 400px;
+  background-color: blue;
+}
+
+.inner-div {
+  width: 200px;
+  height: 200px;
+  background: red;
+  animation: move-inner-div 10s infinite;
+}
+
+  @keyframes move-inner-div {
+    0% {
+    transform: translateX(0) translateY(0);
+    background: purple;
+    }
+    25% {
+      transform: translateY(100%);
+      background: orange;
+      border-radius: 100px;
+    }
+    50% {
+      transform: translateX(100%) translateY(100%) rotate(360deg);
+      background: yellow;
+      box-sizing: border-box;
+    }
+    75% {
+      transform: translateX(100%);
+      background: green;
+      border: solid black;
+    }
+  }
+
